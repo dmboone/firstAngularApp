@@ -4,4 +4,10 @@
 <!-- ngStyle is an attribute directive -->
 <!-- ng before any directive means it's a built in directive -->
 <!-- brackets [] indicate that we want to bind something to a property of this directive -->
-<p [ngStyle]="{backgroundColor: getColor()}">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
+
+<!-- ngClass allows us to dynamically add and remove css classes-->
+<!-- so we add the online style class that we created in the ts file of the component only if the serverStatus is online -->
+<p [ngStyle]="{backgroundColor: getColor()}"
+    [ngClass]="{online: serverStatus === 'online'}">
+    {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+</p>
