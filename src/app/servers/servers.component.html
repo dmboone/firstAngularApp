@@ -1,3 +1,11 @@
+<label>Server Name</label>
+<input type="text"
+    class = "form-control"
+    (input)="onUpdateServerName($event)"> <!-- (input) event is a normal DOM event that is fired whenever the user types -->
+                                         <!-- $event is a reserved word that gives us access to the event data -->
+
+<p>{{serverName}}</p>
+
 <!-- property binding our allowNewServer's value to the button's disabled attribute -->
 <button class="btn btn-primary" [disabled]="!allowNewServer"
 (click)="onCreateServer()">Add Server</button> <!-- event binding -->
