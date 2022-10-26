@@ -25,7 +25,14 @@
 <!-- string interpolation -->
 <p>{{ allowNewServer }}</p>
 
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+
+<!-- Directives -->
+<!-- ngIf is a structural directive which means it makes changes to the DOM so must include * 
+    Inside the quotes must be anything that returns true or false
+    Once our server is created by clicking the button above, the serverCreated var is set to true
+    and this paragraph appears -->
+<p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
 
 <app-server></app-server>
 <app-server></app-server>
