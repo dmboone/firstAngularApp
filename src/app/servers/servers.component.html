@@ -1,10 +1,14 @@
-<!-- binding our allowNewServer's value to the button's disabled attribute -->
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<!-- property binding our allowNewServer's value to the button's disabled attribute -->
+<button class="btn btn-primary" [disabled]="!allowNewServer"
+(click)="onCreateServer()">Add Server</button> <!-- event binding -->
 
 <!-- data binding -->
-<p [innerText]="allowNewServer"></p>
+<!-- <p [innerText]="allowNewServer"></p> -->
+
 <!-- string interpolation -->
 <p>{{ allowNewServer }}</p>
+
+<p>{{ serverCreationStatus }}</p>
 
 <app-server></app-server>
 <app-server></app-server>
