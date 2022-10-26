@@ -31,8 +31,17 @@
 <!-- ngIf is a structural directive which means it makes changes to the DOM so must include * 
     Inside the quotes must be anything that returns true or false
     Once our server is created by clicking the button above, the serverCreated var is set to true
-    and this paragraph appears -->
-<p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
+    and this paragraph text appears -->
+<p *ngIf="serverCreated; else noServer"> <!-- noServer marker created if server is not created, thus enabling ng-template below to show instead -->
+    Server was created, server name is {{serverName}}
+</p>
+
+<!-- else condition for serverCreated -->
+<ng-template #noServer> <!-- this element will only show if this marker noServer is found-->
+    <p>
+        No server was created!
+    </p>
+</ng-template>
 
 <app-server></app-server>
 <app-server></app-server>
