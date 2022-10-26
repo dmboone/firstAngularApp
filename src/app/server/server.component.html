@@ -1,2 +1,7 @@
 <!-- <p>The Server Component</p> -->
-<p>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
+
+<!-- Attribute Directives - these change the element that they have been placed on -->
+<!-- ngStyle is an attribute directive -->
+<!-- ng before any directive means it's a built in directive -->
+<!-- brackets [] indicate that we want to bind something to a property of this directive -->
+<p [ngStyle]="{backgroundColor: getColor()}">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
