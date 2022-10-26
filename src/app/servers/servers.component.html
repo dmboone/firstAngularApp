@@ -1,16 +1,24 @@
 <label>Server Name</label>
-<input type="text"
-    class = "form-control"
-    (input)="onUpdateServerName($event)"> <!-- (input) event is a normal DOM event that is fired whenever the user types -->
-                                         <!-- $event is a reserved word that gives us access to the event data -->
 
+<!-- (input) event is a normal DOM event that is fired whenever the user types -->
+<!-- $event is a reserved word that gives us access to the event data (aka what is typed)-->
+<!-- <input type="text"
+    class = "form-control"
+    (input)="onUpdateServerName($event)"> -->
+
+<!-- Two Way Data Binding - combine property and event binding -->
+ <input type="text"
+ class = "form-control"
+ [(ngModel)]="serverName"> <!-- will trigger on the input event and automatically update the value of the server name in our component -->
+                           <!-- will also update the value of the input element if we change serverName somewhere else -->                                               
 <p>{{serverName}}</p>
 
-<!-- property binding our allowNewServer's value to the button's disabled attribute -->
+<!-- Property binding our allowNewServer's value to the button's disabled attribute -->
+<!-- Event binding the onclick event (just write "click" in Angular) to our onCreateServer method-->
 <button class="btn btn-primary" [disabled]="!allowNewServer"
-(click)="onCreateServer()">Add Server</button> <!-- event binding -->
+(click)="onCreateServer()">Add Server</button> <!-- Event Binding -->
 
-<!-- data binding -->
+<!-- Data binding -->
 <!-- <p [innerText]="allowNewServer"></p> -->
 
 <!-- string interpolation -->
