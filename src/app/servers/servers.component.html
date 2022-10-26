@@ -43,5 +43,5 @@
     </p>
 </ng-template>
 
-<app-server></app-server>
-<app-server></app-server>
+<!-- *ngFor is another Structural Directive that allows us to dynamically add components -->
+<app-server *ngFor="let server of servers"></app-server> <!-- will loop through our array of servers in the component and will dynamically create an app-server element for each-->
